@@ -62,4 +62,13 @@ class RestaurantTest {
                 () -> restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void getTotalPrice() {
+        List<String> itemList = new ArrayList<>();
+        itemList.add("Sweet corn soup");
+        itemList.add("Vegetable lasagne");
+        int totalPrice = restaurant.getTotalPrice(itemList);
+        assertThat(totalPrice, equalTo(388));
+    }
 }
